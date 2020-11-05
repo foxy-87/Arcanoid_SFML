@@ -1,0 +1,19 @@
+﻿  Source.cpp
+C:\Users\danii\source\repos\Project11\Project11\Source.cpp(67,15): warning C4244: инициализация: преобразование "T" в "float", возможна потеря данных
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\danii\source\repos\Project11\Project11\Source.cpp(68,16): warning C4244: инициализация: преобразование "T" в "float", возможна потеря данных
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\danii\source\repos\Project11\Project11\Source.cpp(73,24): warning C4244: =: преобразование "T" в "float", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\Users\danii\source\repos\Project11\Project11\Source.cpp(77,57): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\danii\source\repos\Project11\Project11\Source.cpp(77,36): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+  Project11.vcxproj -> C:\Users\danii\source\repos\Project11\Debug\Project11.exe
