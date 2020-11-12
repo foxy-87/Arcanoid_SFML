@@ -25,7 +25,7 @@ String TileMap[HEIGHT_MAP] = {
 
 class Ball {
 public:
-	float xball, yball;
+	float xball, yball, xplate, yplate;
 	bool gamestart;
 	String File;
 	Image image;
@@ -37,20 +37,29 @@ public:
 		texture.loadFromImage(image);
 		sprite.setTexture(texture);
 	}
+	void game(float xplate, float yplate, float xball, float yball ) {
+		if (gamestart == 0) {
+			sprite.setPosition(xplate, yplate);
+		}
+		else if (gamestart == 1) {
+			sprite.move(xball, yball);
+		}
+	}
 };
 
 float plate(float xplate, float width) {
+	float speed = 7;
 	if (xplate == 0) {
 		if (Keyboard::isKeyPressed(Keyboard::D) or Keyboard::isKeyPressed(Keyboard::Right)) {
-			return 5;
+			return speed;
 		}
 		else {
 			return 0;
 		}
 	}
-	else if (xplate + 100 == width) {
+	else if (xplate + 100 >= width) {
 		if (Keyboard::isKeyPressed(Keyboard::A) or Keyboard::isKeyPressed(Keyboard::Left)) {
-			return -5;
+			return -speed;
 		}
 		else {
 			return 0;
@@ -58,10 +67,10 @@ float plate(float xplate, float width) {
 	}
 	else {
 		if (Keyboard::isKeyPressed(Keyboard::A) or Keyboard::isKeyPressed(Keyboard::Left)) {
-			return -5;
+			return -speed;
 		}
 		if (Keyboard::isKeyPressed(Keyboard::D) or Keyboard::isKeyPressed(Keyboard::Right)) {
-			return 5;
+			return speed;
 		}
 		else {
 			return 0;
@@ -72,8 +81,9 @@ float plate(float xplate, float width) {
 int main()
 {
 	bool l = 1;
-	float xplate, xmove;
+	float xplate, xmove, speed = 4;
 	Ball ball("ball.png");
+	ball.xball = 0; ball.yball = 0; ball.xplate = 0; ball.yplate = 0; ball.gamestart = 0;
 	RenderWindow window(sf::VideoMode(640, 480), "Arcanoid");
 	window.setVerticalSyncEnabled(true);
 	window.setFramerateLimit(60);
@@ -109,11 +119,14 @@ int main()
 		xmove = plate(xplate, width);
 		platesprite.move(xmove, 0);
 		if (ball.gamestart == 0) {
-			ball.sprite.setPosition(realplatePos.x + 40, realplatePos.y - 20);
+			ball.xplate = realplatePos.x + 40;
+			ball.yplate = realplatePos.y - 20;
+			ball.game(ball.xplate, ball.yplate, ball.xball, ball.yball);
+			ball.sprite.setPosition(ball.xplate, ball.yplate);
 			if (Keyboard::isKeyPressed(Keyboard::Space)) {
 				ball.gamestart = 1;
-				ball.xball = -5;
-				ball.yball = -5;
+				ball.xball = -speed;
+				ball.yball = -speed;
 			}
 		}
 		else if (ball.gamestart == 1) {
@@ -145,6 +158,7 @@ int main()
 				ball.xball = ball.xball * -1;
 				l = 1;
 			}
+			ball.game(ball.xplate, ball.yplate, ball.xball, ball.yball);
 			ball.sprite.move(ball.xball, ball.yball);
 		}
 		/*int x, y, a, b;
@@ -152,7 +166,7 @@ int main()
 		y = realplatePos.y;
 		a = realballPos.x;
 		b = realballPos.y;*/
-		cout << realballPos.x << " " << realballPos.y << " " << realplatePos.x << " " << realplatePos.y << endl;
+		cout << ball.xplate << " " << ball.yplate << " " << ball.xball << " " << ball.yball << endl;
 
 		window.clear(Color(255, 255, 255, 255));
 		for (int i = 0; i < HEIGHT_MAP; i++)
