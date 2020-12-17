@@ -1,0 +1,23 @@
+﻿  Source.cpp
+C:\Users\danii\source\repos\Project17\Project17\Source.cpp(236,22): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\danii\source\repos\Project17\Project17\Source.cpp(284,22): warning C4305: аргумент: усечение из "double" в "float"
+C:\Users\danii\source\repos\Project17\Project17\Source.cpp(390,28): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\danii\source\repos\Project17\Project17\Source.cpp(397,40): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\danii\source\repos\Project17\Project17\Source.cpp(404,22): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\danii\source\repos\Project17\Project17\Source.cpp(415,40): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\danii\source\repos\Project17\Project17\Source.cpp(446,7): warning C4101: buff: неиспользованная локальная переменная
+C:\Users\danii\source\repos\Project17\Project17\Source.cpp(445,19): warning C4101: t: неиспользованная локальная переменная
+C:\Users\danii\source\repos\Project17\Project17\Source.cpp(445,31): warning C4101: num: неиспользованная локальная переменная
+C:\Users\danii\source\repos\Project17\Project17\Source.cpp(583,60): warning C4244: аргумент: преобразование "int" в "float", возможна потеря данных
+C:\Users\danii\source\repos\Project17\Project17\Source.cpp(583,40): warning C4244: аргумент: преобразование "T" в "float", возможна потеря данных
+          with
+          [
+              T=int
+          ]
+C:\Users\danii\source\repos\Project17\Project17\Source.cpp(227): warning C4715: menu: значение возвращается не при всех путях выполнения
+C:\Users\danii\source\repos\Project17\Project17\Source.cpp(275): warning C4715: gameover: значение возвращается не при всех путях выполнения
+C:\Users\danii\source\repos\Project17\Project17\Source.cpp(545): warning C4715: pause: значение возвращается не при всех путях выполнения
+C:\Users\danii\source\repos\Project17\Project17\Source.cpp(322): warning C4715: win: значение возвращается не при всех путях выполнения
+C:\Users\danii\source\repos\Project17\Project17\Source.cpp(502): warning C4715: save: значение возвращается не при всех путях выполнения
+C:\Users\danii\source\repos\Project17\Project17\Source.cpp(421): warning C4715: table: значение возвращается не при всех путях выполнения
+  Project17.vcxproj -> C:\Users\danii\source\repos\Project17\Debug\Project17.exe
